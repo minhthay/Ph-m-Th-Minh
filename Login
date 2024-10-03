@@ -1,0 +1,24 @@
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class UserInfo {
+    public static void main(String[] args) {
+        String filePath = "Data/Login.txt";
+        
+        String user1 = "UserID: 001, Username: johndoe, Password: abc123, Firstname: John, Lastname: Doe\n";
+        String user2 = "UserID: 002, Username: janedoe, Password: xyz456, Firstname: Jane, Lastname: Doe\n";
+        
+        try {
+            FileWriter writer = new FileWriter(filePath, true);
+            
+            writer.write(user1);
+            writer.write(user2);
+            
+            writer.close();
+            
+            System.out.println("Du lieu nguoi dung luu tru vao " + filePath);
+        } catch (IOException e) {
+            System.out.println("Co Loi Khi Luu Du Lieu: " + e.getMessage());
+        }
+    }
+}
